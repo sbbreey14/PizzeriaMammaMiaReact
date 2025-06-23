@@ -1,0 +1,31 @@
+/* Estilo general del encabezado */
+.header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url('../img/Header.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px); 
+}
+
+.content {
+  position: relative;
+}
