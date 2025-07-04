@@ -21,7 +21,13 @@ export const CardPizza = ({ name='Pizza Pomodoro Queso', price = 10990, ingredie
         {/* Cuerpo card */}
       <ListGroup className="list-group-flush">
         <ListGroup.Item style={{textAlign:'center'}}>Ingredientes:
-        <Card.Text><PiPizzaFill style={{margin:'5px'}}/>{ ingredients.join(', ') }</Card.Text>
+          <ul className="p-0 m-3">
+            {ingredients.map((ingrediente, index) => (
+              <li key={index}>
+                {ingrediente}
+              </li>
+            ))}
+          </ul>
         </ListGroup.Item>
       </ListGroup>
 
@@ -29,8 +35,8 @@ export const CardPizza = ({ name='Pizza Pomodoro Queso', price = 10990, ingredie
       <Card.Body>
         <b><Card.Text style={{textAlign:'center', marginBottom:'15px'}}>Precio: ${price.toLocaleString('es-CL')}</Card.Text></b>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <Button style={{ backgroundColor:'white', color:'black' }}>Ver mas <PiEyes style={{ marginBottom:'1px'}}/></Button>
-            <Button style={{ backgroundColor:'black', color:'white' }}>Añadir <IoCartOutline style={{ marginBottom:'2px'}} /></Button>
+            <Button style={{ backgroundColor:'white', color:'black', margin:'5px'}}>Ver mas <PiEyes style={{ marginBottom:'1px'}}/></Button>
+            <Button style={{ backgroundColor:'black', color:'white', margin:'5px' }}>Añadir <IoCartOutline style={{ marginBottom:'2px'}} /></Button>
         </div>
       </Card.Body>
     </Card>
